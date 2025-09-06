@@ -12,7 +12,11 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        //lista los productos con :: all() -Consulta todos los productos de la DB y los pasa a la variable productos
+        $productos=Producto::all();
+        //Ahora pasamos la variable productos a la vista
+        return view('welcome',['productos'=> $productos]);
+        //Tambien se puede escribir de la forma  return view('welcome', compact('productos'))
     }
 
     /**

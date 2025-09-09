@@ -16,6 +16,9 @@
     </header>
 
     <main>
+        <div class="text-center bg-green-100 my-4">
+            <h1 class="text-lg font-semibold m-4 uppercase">@yield('cabecera')</h1>
+        </div>
      {{-- -Reservando espacio para el contenido de las vistas hijas --}}   
      @yield('contenido')
     </main>

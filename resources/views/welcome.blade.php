@@ -1,14 +1,21 @@
 @extends('layouts.app')
-@section('Productos')
+@section('Principal')
 @section('contenido')
-    <h1 class="text-center text-red-800 text-s"> LISTA DE PRODUCTOS</h1>
-    <ul> 
-    {{-- -Se utiliza la etiqueta @foreach para hacer un recorrido de todos los productos --}}    
-        @foreach ($productos as $producto)
-        {{-- -Hay qaue definir en el controlador la variable productos --}}
-            <li>
-                {{ $producto->nombre }} - precio: {{ $producto->precio }} - cantidad {{ $producto->cantidad }}
-            </li>
-        @endforeach
-    </ul>
+   
+<div
+  class="hero min-h-screen"
+  style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);"
+>
+  <div class="hero-overlay"></div>
+  <div class="hero-content text-neutral-content text-center">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-5xl font-bold">Bienvenido al proyecto Alm2977402</h1>
+      <p class="mb-5">
+        Este ese un ejemplo para el uso de DaisyUI
+      </p>
+      <button class="btn btn-primary">Inicio</button>
+    </div>
+  </div>
+</div>
+
 @endsection

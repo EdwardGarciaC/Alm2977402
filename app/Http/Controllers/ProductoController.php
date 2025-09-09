@@ -15,7 +15,8 @@ class ProductoController extends Controller
         //lista los productos con :: all() -Consulta todos los productos de la DB y los pasa a la variable productos
         $productos=Producto::all();
         //Ahora pasamos la variable productos a la vista
-        return view('welcome',['productos'=> $productos]);
+       // return view('welcome',['productos'=> $productos]);
+        return view('productos.index',['productos'=> $productos]);
         //Tambien se puede escribir de la forma  return view('welcome', compact('productos'))
     }
 
@@ -25,6 +26,7 @@ class ProductoController extends Controller
     public function create()
     {
         //
+        return view('productos.create');
     }
 
     /**
@@ -33,6 +35,8 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //
+        Producto::create($request->all());
+        return redirect()->route('productos.index');
 
     }
 
@@ -50,6 +54,7 @@ class ProductoController extends Controller
     public function edit(Producto $producto)
     {
         //
+        return view ('productos.edit', compact('producto'));
     }
 
     /**
@@ -58,6 +63,8 @@ class ProductoController extends Controller
     public function update(Request $request, Producto $producto)
     {
         //
+        $producto->update($request->all());
+        return redirect()->route('productos.index');
     }
 
     /**
@@ -65,5 +72,7 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
+        $producto->delete();
+        return redirect()->route('productos.index');
             }
 }

@@ -32,7 +32,7 @@
                 {{-- Stock --}}
                 <div class="form-control">
                     <label class="label">
-                    <span class="label-text">Stock</span>
+                    <span class="label-text">Cantidad</span>
                     </label>
                     <input type="number" name="cantidad" placeholder="cantidad" class="input input-bordered" required />
                 </div>
